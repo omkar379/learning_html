@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Input</title>
 </head>
 <body>
     <!-- Input tag example -->
@@ -12,6 +12,7 @@
         <lable>First Name</lable>
         <input type="text" placeholder="Enter Your Name">
         <br><br>
+        <!-- placeholder name in show box -->
         <lable>Last Name</lable>
         <input type="text" placeholder="Enter Your Last Name">
         <br><br>
@@ -28,6 +29,51 @@
           <input type="month">
           <input type="week">
           <input type="time">
+          <input type="datetime-local">
+          <br><br>
+          <input type="color">
+          <input type="range">
+          <lable>Enter url</lable>
+          <input type="url" placeholder="https://www.youtube.com/">
+          <br><br>
+          <!-- checkbox for (checked only one) -->
+          <lable>Choose cities</lable>
+           <input type="checkbox">Mumbai
+          <input type="checkbox"checked>Pune
+          <input type="checkbox">Rampur
+          <input type="checkbox">Raigad
+          <input type="checkbox">Nagpur
+          <input type="checkbox">Solapur
+          <br><br>
+          <lable>Choose Gender</lable>
+              <!-- for only one radio  (name="gender") -->
+          <input type="radio" name="gender"checked>Male
+          <input type="radio" name="gender">Female
+          <input type="radio" name="gender">Other
+
+          <br><br>
+          <lable>Select Fav Food</lable>
+          <select>
+                  <!-- for selection more items -->
+            <option>Maggie</option>
+            <option>WadPav</option>
+            <option>Bhel</option>
+            <option>Samosa</option>
+            <option>Dabeli</option>
+          </select>
+          <br>
+          <lable>Upload image or docs</lable>
+          <input type="file" multiple>
+
+             <!-- it can dragable and readable -->
+          <textarea row="5" cols="20"></textarea>
+              <br><br>
+          <input type="Submit"  value="Submit">
+
+          <body style="background-color: lightyellow; color: black;"></body>
+
+
+
     </form>
 </body>
 </html>
