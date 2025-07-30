@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hotel Sunshine - Login</title>
+  <style>
+    body {
+      background: #000;
+      margin: 0;
+      min-height: 750px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .glow-text {
+      font-size: 42px;
+      font-weight: bold;
+      background: linear-gradient(120deg, #ff00ff, #00ffff, #39ff14, #ff00ff);
+      background-size: 500px 500px;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 5s ease-in-out infinite;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    @keyframes glow {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .login-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      padding: 40px 30px;
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+      width: 300px;
+    }
+
+    .login-box:hover {
+      box-shadow: 0 0 50px rgba(0, 255, 255, 0.6);
+    }
+
+    .login-box h2 {
+      color: #fff;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      background: #111;
+      border: none;
+      border-bottom: 2px solid #00ffff;
+      color: #fff;
+      font-size: 16px;
+      border-radius: 4px;
+      transition: 0.3s;
+    }
+
+    .login-box input:focus {
+      outline: none;
+      border-bottom: 2px solid #ff00ff;
+      background-color: #222;
+    }
+
+    .login-box button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(120deg, #00ffff, #ff00ff);
+      border: none;
+      border-radius: 30px;
+      color: #000;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .login-box button:hover {
+      background: linear-gradient(120deg, #ff00ff, #00ffff);
+      transform: scale(1.05);
+    }
+
+    .toggle-password {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #ccc;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .caps-warning {
+      color: #ff4444;
+      font-size: 12px;
+      margin-top: 5px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="glow-text">
+    Welcome To Hotel Sunshine
+  </div>
+
+  <div class="login-box">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="text" id="username" name="username" placeholder="Username" />
+      <input type="password" id="password" name="password" placeholder="Password" />
+      <div class="toggle-password" onclick="togglePassword()">👁 Show Password</div>
+      <div id="capsWarning" class="caps-warning">Caps Lock is ON</div>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <script>
+    // Show/Hide password toggle
+    function togglePassword() {
+      const pwdInput = document.getElementById("password");
+      const toggle = document.querySelector(".toggle-password");
+      if (pwdInput.type === "password") {
+        pwdInput.type = "text";
+        toggle.textContent = "🙈 Hide Password";
+      } else {
+        pwdInput.type = "password";
+        toggle.textContent = "👁 Show Password";
+      }
+    }
+
+    // Caps Lock Warning
+    document.getElementById("password").addEventListener("keyup", function (e) {
+      const capsWarning = document.getElementById("capsWarning");
+      if (e.getModifierState("CapsLock")) {
+        capsWarning.style.display = "block";
+      } else {
+        capsWarning.style.display = "none";
+      }
+    });
+
+    // Form Submission
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault(); // Stop form submission
+
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      if (username === "" || password === "") {
+        alert("❌ Please enter both username and password.");
+      } else if (username === "admin" && password === "1234") {
+        if (confirm("✅ Login successful! Continue to dashboard?")) {
+          // Optional redirect
+          // window.location.href = "dashboard.html";
+        }
+        // Reset form
+        document.getElementById("loginForm").reset();
+        document.querySelector(".toggle-password").textContent = "👁 Show Password";
+        document.getElementById("capsWarning").style.display = "none";
+      } else {
+        alert("❌ Invalid username or password.");
+      }
+    });
+  </script>
+
+</body>
+</html>
