@@ -1,11 +1,340 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Agency</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wanderlust Travel Agency</title>
+
+  <!-- Internal CSS with Enhancements -->
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: #000000;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    nav {
+      background-color: #ffffff;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: auto;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #000;
+      letter-spacing: 1px;
+    }
+
+    .nav-links a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #000;
+      font-weight: 500;
+      transition: color 0.3s, border-bottom 0.3s;
+      padding-bottom: 5px;
+    }
+
+    .nav-links a:hover {
+      color: #007bff;
+      border-bottom: 2px solid #007bff;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .nav-links a {
+        margin-left: 0;
+      }
+    }
+
+    /* Hero */
+    .hero {
+      height: 90vh;
+      background: url('https://source.unsplash.com/1600x900/?travel') no-repeat center center/cover;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      padding: 20px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .hero div {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    .btn {
+      background-color: #000000;
+      color: #ffffff;
+      padding: 14px 30px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      transition: background-color 0.3s, transform 0.2s;
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn:hover {
+      background-color: #333333;
+      transform: scale(1.05);
+    }
+
+    /* Sections */
+    .section {
+      padding: 70px 20px;
+      text-align: center;
+    }
+
+    .section:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .section h2 {
+      margin-bottom: 40px;
+      font-size: 32px;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .card {
+      background-color: #f0f0f0;
+      border-radius: 10px;
+      overflow: hidden;
+      width: 300px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-content h3 {
+      margin-top: 0;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    /* Contact Form */
+    .form-section {
+      background-color: #ffffff;
+      padding: 70px 20px;
+    }
+
+    .form-section h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    input, textarea {
+      padding: 14px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0,123,255,0.5);
+    }
+
+    button {
+      padding: 14px;
+      font-size: 16px;
+      background-color: #000000;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #333333;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #ffffff;
+      color: #000000;
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #ccc;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
-    
+
+  <!-- Navbar -->
+  <nav>
+    <div class="navbar">
+      <div class="logo">Wanderlust</div>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#packages">Packages</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div>
+      <h2>Your Adventure Starts Here</h2>
+      <a href="#packages" class="btn">Explore Packages</a>
+    </div>
+  </div>
+
+  <!-- Destinations Section -->
+  <div class="section" id="destinations">
+    <h2>Top Destinations</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="https://source.unsplash.com/300x200/?paris" alt="Paris">
+        <div class="card-content">
+          <h3>Paris</h3>
+          <p>The city of lights and love. Discover its charm and culture.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/300x200/?bali" alt="Bali">
+        <div class="card-content">
+          <h3>Bali</h3>
+          <p>Relax in tropical paradise with stunning beaches and temples.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/300x200/?newyork" alt="New York">
+        <div class="card-content">
+          <h3>New York</h3>
+          <p>Experience the energy and sights of the Big Apple.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Packages Section -->
+  <div class="section" id="packages">
+    <h2>Our Packages</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="card-content">
+          <h3>Romantic Escape</h3>
+          <p>Includes flight, 5-star hotel, and city tours for two.</p>
+          <p><strong>Price: $1,200</strong></p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <h3>Family Fun</h3>
+          <p>Perfect for families with resort stay and adventure parks.</p>
+          <p><strong>Price: $2,500</strong></p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <h3>Backpacker Special</h3>
+          <p>Budget-friendly package with hostels and local experiences.</p>
+          <p><strong>Price: $800</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="form-section" id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Wanderlust Travel Agency. All rights reserved.
+  </footer>
+
 </body>
 </html>
