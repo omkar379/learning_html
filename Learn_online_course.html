@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>LearnOnline - Courses</title>
-  
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
 
   <style>
     body {
@@ -60,7 +59,7 @@
     <!-- Course 1 -->
     <div class="col-md-4">
       <div class="card">
-        <img src="https://source.unsplash.com/400x200/?coding" class="card-img-top course-thumb" alt="Web Development Bootcamp thumbnail">
+        <img src="https://source.unsplash.com/400x200/?coding" class="card-img-top course-thumb" alt="Web Development">
         <div class="card-body">
           <h5 class="card-title">Web Development Bootcamp</h5>
           <p class="card-text text-muted">HTML, CSS, JS, Bootstrap</p>
@@ -72,7 +71,9 @@
             <i class="bi bi-star-half"></i>
             <small class="text-muted">(4.5)</small>
           </div>
-          <a href="#" class="btn btn-primary btn-sm mt-2" title="Learn more about this course">View Course</a>
+          <button class="btn btn-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#webDevModal">
+            View Course
+          </button>
         </div>
       </div>
     </div>
@@ -80,7 +81,7 @@
     <!-- Course 2 -->
     <div class="col-md-4">
       <div class="card">
-        <img src="https://source.unsplash.com/400x200/?python" class="card-img-top course-thumb" alt="Python for Beginners thumbnail">
+        <img src="https://source.unsplash.com/400x200/?python" class="card-img-top course-thumb" alt="Python">
         <div class="card-body">
           <h5 class="card-title">Python for Beginners</h5>
           <p class="card-text text-muted">Learn from scratch</p>
@@ -92,7 +93,9 @@
             <i class="bi bi-star-fill"></i>
             <small class="text-muted">(5.0)</small>
           </div>
-          <a href="#" class="btn btn-primary btn-sm mt-2" title="Learn more about this course">View Course</a>
+          <button class="btn btn-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#pythonModal">
+            View Course
+          </button>
         </div>
       </div>
     </div>
@@ -100,7 +103,7 @@
     <!-- Course 3 -->
     <div class="col-md-4">
       <div class="card">
-        <img src="https://source.unsplash.com/400x200/?data,analytics" class="card-img-top course-thumb" alt="Data Analytics thumbnail">
+        <img src="https://source.unsplash.com/400x200/?data,analytics" class="card-img-top course-thumb" alt="Data Analytics">
         <div class="card-body">
           <h5 class="card-title">Data Analytics Masterclass</h5>
           <p class="card-text text-muted">Excel, SQL, Tableau</p>
@@ -112,16 +115,17 @@
             <i class="bi bi-star"></i>
             <small class="text-muted">(4.0)</small>
           </div>
-          <a href="#" class="btn btn-primary btn-sm mt-2" title="Learn more about this course">View Course</a>
+          <button class="btn btn-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#dataModal">
+            View Course
+          </button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Instructor Section -->
+  <!-- Instructors -->
   <h3 class="mb-3">Meet Your Instructors 👩‍🏫</h3>
   <div class="row g-4 mb-5">
-    <!-- Instructor 1 -->
     <div class="col-md-6">
       <div class="card p-3">
         <div class="row g-0 align-items-center">
@@ -142,8 +146,6 @@
         </div>
       </div>
     </div>
-
-    <!-- Instructor 2 -->
     <div class="col-md-6">
       <div class="card p-3">
         <div class="row g-0 align-items-center">
@@ -166,7 +168,7 @@
     </div>
   </div>
 
-  <!-- Course Curriculum Tabs -->
+  <!-- Curriculum -->
   <h3 class="mb-3">📚 Course Curriculum</h3>
   <ul class="nav nav-tabs mb-3" id="courseTabs" role="tablist">
     <li class="nav-item" role="presentation">
@@ -176,7 +178,7 @@
       <button class="nav-link" id="week2-tab" data-bs-toggle="tab" data-bs-target="#week2" type="button" role="tab">Week 2</button>
     </li>
   </ul>
-  <div class="tab-content" id="courseTabsContent">
+  <div class="tab-content mb-5" id="courseTabsContent">
     <div class="tab-pane fade show active" id="week1" role="tabpanel">
       <ul>
         <li>Intro to HTML & Tags</li>
@@ -192,12 +194,172 @@
       </ul>
     </div>
   </div>
-</div>
+
+  <!-- About Us -->
+  <div class="container mb-5">
+    <h3>🧭 About LearnOnline</h3>
+    <p>
+      LearnOnline is a global online education platform offering high-quality courses in programming, design, and data science.
+      Our mission is to empower learners to upskill and achieve career growth through expert-led content and hands-on learning.
+    </p>
+  </div>
+
+  <!-- Testimonials -->
+  <div class="container mb-5">
+    <h3>💬 What Our Students Say</h3>
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <blockquote class="blockquote text-center">
+            <p>"LearnOnline helped me land my first developer job. The projects were very practical!"</p>
+            <footer class="blockquote-footer">Priya Sharma, <cite>Full-Stack Developer</cite></footer>
+          </blockquote>
+        </div>
+        <div class="carousel-item">
+          <blockquote class="blockquote text-center">
+            <p>"The Python course was super beginner-friendly and well-explained."</p>
+            <footer class="blockquote-footer">Mohit Verma, <cite>Data Analyst</cite></footer>
+          </blockquote>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="container mb-5">
+    <h3>❓ Frequently Asked Questions</h3>
+    <div class="accordion" id="faqAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq1">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+            Is there any deadline to complete the courses?
+          </button>
+        </h2>
+        <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">No, all our courses are self-paced and available for lifetime once you enroll.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faq2">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+            Do I get a certificate after completion?
+          </button>
+        </h2>
+        <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">Yes! A downloadable certificate will be available upon course completion.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="container mb-5">
+    <h3>📬 Contact Us</h3>
+    <form>
+      <div class="mb-3">
+        <label for="nameInput" class="form-label">Name</label>
+        <input type="text" class="form-control" id="nameInput" placeholder="Your Name">
+      </div>
+      <div class="mb-3">
+        <label for="emailInput" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="emailInput" placeholder="you@example.com">
+      </div>
+      <div class="mb-3">
+        <label for="messageInput" class="form-label">Message</label>
+        <textarea class="form-control" id="messageInput" rows="4" placeholder="Write your message here..."></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+  </div>
+
+</div> <!-- End container -->
 
 <!-- Footer -->
 <footer class="text-white text-center py-3 mt-5">
   <p class="mb-0">© 2025 LearnOnline. All rights reserved.</p>
 </footer>
+
+<!-- Modals -->
+<!-- Web Development Modal -->
+<div class="modal fade" id="webDevModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Web Development Bootcamp</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Learn to build beautiful and responsive websites using HTML, CSS, JavaScript, and Bootstrap.</p>
+        <ul>
+          <li>Basics of HTML & CSS</li>
+          <li>JavaScript DOM Manipulation</li>
+          <li>Responsive Design</li>
+        </ul>
+        <p><strong>Duration:</strong> 4 weeks</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn btn-success">Enroll Now</a>
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Python Modal -->
+<div class="modal fade" id="pythonModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Python for Beginners</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Start coding with Python! This beginner course covers syntax, logic, functions, and real-world practice.</p>
+        <ul>
+          <li>Data Types & Loops</li>
+          <li>Functions and Modules</li>
+          <li>Hands-on Projects</li>
+        </ul>
+        <p><strong>Duration:</strong> 3 weeks</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn btn-success">Enroll Now</a>
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Data Analytics Modal -->
+<div class="modal fade" id="dataModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Data Analytics Masterclass</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Analyze data using Excel, SQL, and Tableau. Perfect for aspiring analysts.</p>
+        <ul>
+          <li>Data Cleaning & Analysis</li>
+          <li>SQL Queries</li>
+          <li>Dashboarding with Tableau</li>
+        </ul>
+        <p><strong>Duration:</strong> 5 weeks</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn btn-success">Enroll Now</a>
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
