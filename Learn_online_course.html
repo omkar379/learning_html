@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LearnOnline - Courses</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .course-thumb {
+      height: 200px;
+      object-fit: cover;
+    }
+    .star {
+      color: gold;
+    }
+    footer {
+      background-color: #343a40;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">📘 LearnOnline</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#">Courses</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Instructors</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<div class="container mt-4">
+  <div class="row mb-4">
+    <div class="col text-center">
+      <h1 class="display-5">Explore Our Top Courses</h1>
+      <p class="text-muted">Upskill with world-class instructors</p>
+    </div>
+  </div>
+
+  <!-- Course Preview Cards -->
+  <div class="row g-4 mb-5">
+    <!-- Course 1 -->
+    <div class="col-md-4">
+      <div class="card">
+        <img src="https://source.unsplash.com/400x200/?coding" class="card-img-top course-thumb" alt="Web Development Bootcamp thumbnail">
+        <div class="card-body">
+          <h5 class="card-title">Web Development Bootcamp</h5>
+          <p class="card-text text-muted">HTML, CSS, JS, Bootstrap</p>
+          <div class="star">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-half"></i>
+            <small class="text-muted">(4.5)</small>
+          </div>
+          <a href="#" class="btn btn-primary btn-sm mt-2" title="Learn more about this course">View Course</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Course 2 -->
+    <div class="col-md-4">
+      <div class="card">
+        <img src="https://source.unsplash.com/400x200/?python" class="card-img-top course-thumb" alt="Python for Beginners thumbnail">
+        <div class="card-body">
+          <h5 class="card-title">Python for Beginners</h5>
+          <p class="card-text text-muted">Learn from scratch</p>
+          <div class="star">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <small class="text-muted">(5.0)</small>
+          </div>
+          <a href="#" class="btn btn-primary btn-sm mt-2" title="Learn more about this course">View Course</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Course 3 -->
+    <div class="col-md-4">
+      <div class="card">
+        <img src="https://source.unsplash.com/400x200/?data,analytics" class="card-img-top course-thumb" alt="Data Analytics thumbnail">
+        <div class="card-body">
+          <h5 class="card-title">Data Analytics Masterclass</h5>
+          <p class="card-text text-muted">Excel, SQL, Tableau</p>
+          <div class="star">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star"></i>
+            <small class="text-muted">(4.0)</small>
+          </div>
+          <a href="#" class="btn btn-primary btn-sm mt-2" title="Learn more about this course">View Course</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Instructor Section -->
+  <h3 class="mb-3">Meet Your Instructors 👩‍🏫</h3>
+  <div class="row g-4 mb-5">
+    <!-- Instructor 1 -->
+    <div class="col-md-6">
+      <div class="card p-3">
+        <div class="row g-0 align-items-center">
+          <div class="col-auto">
+            <img src="https://source.unsplash.com/80x80/?person" class="rounded-circle" alt="Instructor Ayesha Khan">
+          </div>
+          <div class="col ps-3">
+            <h6 class="mb-0">Ayesha Khan</h6>
+            <p class="text-muted mb-1">Front-End Developer</p>
+            <div class="star">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Instructor 2 -->
+    <div class="col-md-6">
+      <div class="card p-3">
+        <div class="row g-0 align-items-center">
+          <div class="col-auto">
+            <img src="https://source.unsplash.com/80x80/?teacher" class="rounded-circle" alt="Instructor Raj Patel">
+          </div>
+          <div class="col ps-3">
+            <h6 class="mb-0">Raj Patel</h6>
+            <p class="text-muted mb-1">Python Specialist</p>
+            <div class="star">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Course Curriculum Tabs -->
+  <h3 class="mb-3">📚 Course Curriculum</h3>
+  <ul class="nav nav-tabs mb-3" id="courseTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="week1-tab" data-bs-toggle="tab" data-bs-target="#week1" type="button" role="tab">Week 1</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="week2-tab" data-bs-toggle="tab" data-bs-target="#week2" type="button" role="tab">Week 2</button>
+    </li>
+  </ul>
+  <div class="tab-content" id="courseTabsContent">
+    <div class="tab-pane fade show active" id="week1" role="tabpanel">
+      <ul>
+        <li>Intro to HTML & Tags</li>
+        <li>CSS Basics & Styling</li>
+        <li>Responsive Design with Bootstrap</li>
+      </ul>
+    </div>
+    <div class="tab-pane fade" id="week2" role="tabpanel">
+      <ul>
+        <li>JavaScript Fundamentals</li>
+        <li>DOM Manipulation</li>
+        <li>Mini Projects</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="text-white text-center py-3 mt-5">
+  <p class="mb-0">© 2025 LearnOnline. All rights reserved.</p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
